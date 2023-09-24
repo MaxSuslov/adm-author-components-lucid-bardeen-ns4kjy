@@ -1,11 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
 
-import './assets/main.css'
+import App from "./App.vue";
+import BaseBadge from "./components/BaseBadge.vue";
+import BadgeList from "./components/BadgeList.vue";
+import UserInfo from "./components/UserInfo.vue";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
-
-app.mount('#app')
+app.component("base-badge", BaseBadge);
+app.component("badge-list", BadgeList);
+app.component("user-info", UserInfo);
+app.mount("#app");

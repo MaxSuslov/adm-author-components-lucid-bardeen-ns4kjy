@@ -1,9 +1,39 @@
 <template>
-  <h1>Hello {{ msg }}</h1>
+  <div>
+    <the-header></the-header>
+    <badge-list></badge-list>
+    <user-info
+      :full-name="activeUser.name"
+      :info-text="activeUser.description"
+      :role="activeUser.role"
+    ></user-info>
+  </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
-
-const msg = ref<string>('World');
+<script>
+import TheHeader from "./components/TheHeader.vue";
+export default {
+  components: {
+    "the-header": TheHeader,
+  },
+  data() {
+    return {
+      activeUser: {
+        name: "Maximilian SchwarzmÃžller",
+        description: "Site owner and admin",
+        role: "admin",
+      },
+    };
+  },
+};
 </script>
+
+<style>
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
